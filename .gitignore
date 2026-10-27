@@ -1,0 +1,22 @@
+# Keine Bilder ins oeffentliche Repository: Screenshots des Kalenders zeigen
+# Schuelernamen und deren Absenzen.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.tiff
+*.svg
+
+# Ebenso keine Exporte oder Testdaten aus Schulnetz
+*.pdf
+*.xml
+*.csv
+*.ics
+*.xlsx
+
+# Lokales Werkzeug und Systemdateien
+.claude/
+.DS_Store
+node_modules/
