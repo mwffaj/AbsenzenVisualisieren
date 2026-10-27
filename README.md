@@ -17,8 +17,8 @@ ein zweiter Klick schliesst die Ansicht.
 
 | Fassung | Seite | Prüfungstermine |
 | --- | --- | --- |
-| **V2** (empfohlen) | `index-v2.html` | holt das Bookmarklet selbst nach |
-| V1 | `index.html` | zuerst die Prüfungsplan-Seite besuchen |
+| **V2** (empfohlen) | `index.html` | holt das Bookmarklet selbst nach |
+| V1 | `v1.html` | zuerst die Prüfungsplan-Seite besuchen |
 
 Beide Fassungen sind eigenständig und stören einander nicht. V1 bleibt als
 erprobte Fassung unverändert erhalten.
@@ -31,7 +31,7 @@ erprobte Fassung unverändert erhalten.
 | `build.js` / `build-v2.js` | Build: Kommentare entfernen, Syntax prüfen, Link erzeugen |
 | `bookmarklet-min.js` / `bookmarklet-v2-min.js` | Zwischenergebnis ohne Kommentare |
 | `bookmarklet-embedded.txt` / `bookmarklet-v2-embedded.txt` | fertiger `javascript:`-Link |
-| `index.html` / `index-v2.html` | Installationsseite mit dem eingebetteten Link |
+| `index.html` / `v1.html` | Installationsseite mit dem eingebetteten Link (V2 / V1) |
 
 ## Bauen
 

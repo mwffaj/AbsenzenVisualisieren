@@ -1,4 +1,4 @@
-// Build step: bookmarklet-source.js -> bookmarklet-min.js -> bookmarklet-embedded.txt -> index.html
+// Build step: bookmarklet-source.js -> bookmarklet-min.js -> bookmarklet-embedded.txt -> v1.html
 // Run with: node build.js
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +7,7 @@ const DIR = __dirname;
 const SRC = path.join(DIR, 'bookmarklet-source.js');
 const MIN = path.join(DIR, 'bookmarklet-min.js');
 const EMB = path.join(DIR, 'bookmarklet-embedded.txt');
-const HTML = path.join(DIR, 'index.html');
+const HTML = path.join(DIR, 'v1.html');
 
 const KEYWORDS_BEFORE_REGEX = ['return', 'typeof', 'case', 'in', 'of', 'new', 'delete', 'void', 'do', 'else', 'yield', 'await'];
 
@@ -84,7 +84,7 @@ fs.writeFileSync(MIN, min);
 fs.writeFileSync(EMB, embedded);
 
 const html = fs.readFileSync(HTML, 'utf8');
-if (!/href="javascript:[^"]*"/.test(html)) throw new Error('Bookmarklet-Link in index.html nicht gefunden.');
+if (!/href="javascript:[^"]*"/.test(html)) throw new Error('Bookmarklet-Link in v1.html nicht gefunden.');
 const patched = html.replace(/href="javascript:[^"]*"/, () => `href="${embedded}"`);
 fs.writeFileSync(HTML, patched);
 

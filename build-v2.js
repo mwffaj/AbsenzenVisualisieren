@@ -1,4 +1,4 @@
-// Build step V2: bookmarklet-v2-source.js -> bookmarklet-v2-min.js -> bookmarklet-v2-embedded.txt -> index-v2.html
+// Build step V2: bookmarklet-v2-source.js -> bookmarklet-v2-min.js -> bookmarklet-v2-embedded.txt -> index.html
 // Run with: node build-v2.js
 // Die V1-Dateien bleiben unberuehrt; dafuer ist build.js zustaendig.
 const fs = require('fs');
@@ -8,7 +8,7 @@ const DIR = __dirname;
 const SRC = path.join(DIR, 'bookmarklet-v2-source.js');
 const MIN = path.join(DIR, 'bookmarklet-v2-min.js');
 const EMB = path.join(DIR, 'bookmarklet-v2-embedded.txt');
-const HTML = path.join(DIR, 'index-v2.html');
+const HTML = path.join(DIR, 'index.html');
 
 const KEYWORDS_BEFORE_REGEX = ['return', 'typeof', 'case', 'in', 'of', 'new', 'delete', 'void', 'do', 'else', 'yield', 'await'];
 
@@ -85,7 +85,7 @@ fs.writeFileSync(MIN, min);
 fs.writeFileSync(EMB, embedded);
 
 const html = fs.readFileSync(HTML, 'utf8');
-if (!/href="javascript:[^"]*"/.test(html)) throw new Error('Bookmarklet-Link in index-v2.html nicht gefunden.');
+if (!/href="javascript:[^"]*"/.test(html)) throw new Error('Bookmarklet-Link in index.html nicht gefunden.');
 const patched = html.replace(/href="javascript:[^"]*"/, () => `href="${embedded}"`);
 fs.writeFileSync(HTML, patched);
 
